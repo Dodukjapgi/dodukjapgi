@@ -1,2 +1,0 @@
-# dodukjapgi
-play dodukjapgi game
