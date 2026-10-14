@@ -1,6 +1,7 @@
 package com;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Player {
@@ -38,5 +39,9 @@ public class Player {
         final Card drawnCard = target.removeCardAt(index);
         addCard(drawnCard);
         return drawnCard;
+    }
+
+    public void shuffleHand() {
+        Collections.shuffle(hand);
     }
 }
