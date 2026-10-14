@@ -1,4 +1,4 @@
 package com;
 
-public class Player {
+public record Player(String name) {
 }
