@@ -15,39 +15,28 @@ public class Player {
         return name;
     }
 
-    public void addCard(Card card) {
-        hand.add(card);
-    }
-
-    public List<Card> getHand() {
-        return hand;
-    }
-
-    public void clearHand() {
-        hand.clear();
-    }
-
     public int getHandSize() {
         return hand.size();
     }
 
-    public void removeCard(Card card) {
-        hand.remove(card);
+    public boolean isEmpty() {
+        return hand.isEmpty();
     }
 
-    public boolean hasCard(Card card) {
-        return hand.contains(card);
+    public void addCard(Card card) {
+        hand.add(card);
     }
 
-    public Card getCard(int index) {
-        return hand.get(index);
+    public Card removeCardAt(int index) {
+        if (index < 0 || index >= hand.size()) {
+            throw new IllegalArgumentException("잘못된 카드 번호: " + index);
+        }
+        return hand.remove(index);
     }
 
-    public void removeCard(int index) {
-        hand.remove(index);
-    }
-
-    public boolean hasCard(int index) {
-        return index >= 0 && index < hand.size();
+    public Card drawFrom(Player target, int index) {
+        final Card drawnCard = target.removeCardAt(index);
+        addCard(drawnCard);
+        return drawnCard;
     }
 }
