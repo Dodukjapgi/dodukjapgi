@@ -14,6 +14,8 @@ public abstract class Player {
 
     public abstract int chooseCardIndex(Player target);
 
+    public abstract void introduce();
+
     public String getName() {
         return name;
     }
