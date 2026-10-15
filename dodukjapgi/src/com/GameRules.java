@@ -1,4 +1,4 @@
 package com;
 
-public class GameRules {
+public interface GameRules {
 }
