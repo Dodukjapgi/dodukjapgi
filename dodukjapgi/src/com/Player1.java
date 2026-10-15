@@ -7,11 +7,11 @@ public class Player1 extends Player {
 
     @Override
     public String getCharacterName() {
-        return "여우";
+        return "플레이어 1";
     }
 
     @Override
     public String getTurnMessage() {
-        return "후후, 어떤 카드가 조커일까?";
+        return "플레이어 1입니다.";
     }
 }

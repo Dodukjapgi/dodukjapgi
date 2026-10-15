@@ -7,11 +7,11 @@ public class Player2 extends Player {
 
     @Override
     public String getCharacterName() {
-        return "곰";
+        return "플레이어 2";
     }
 
     @Override
     public String getTurnMessage() {
-        return "이번엔 절대 안 속아!";
+        return "플레이어 2입니다.";
     }
 }
