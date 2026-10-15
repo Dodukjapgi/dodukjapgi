@@ -4,13 +4,15 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Player {
+public abstract class Player {
     private final String name;
     private final List<Card> hand = new ArrayList<>();
 
     public Player(String name) {
         this.name = name;
     }
+
+    public abstract int chooseCardIndex(Player target);
 
     public String getName() {
         return name;
@@ -36,12 +38,28 @@ public class Player {
     }
 
     public Card drawFrom(Player target, int index) {
-        final Card drawnCard = target.removeCardAt(index);
-        addCard(drawnCard);
-        return drawnCard;
+        Card drawn = target.removeCardAt(index);
+        addCard(drawn);
+        return drawn;
     }
 
     public void shuffleHand() {
         Collections.shuffle(hand);
+    }
+
+    public String showHand() {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < hand.size(); i++) {
+            stringBuilder.append(String.format("(%d)%s ", i + 1, hand.get(i)));
+        }
+        return stringBuilder.toString().trim();
+    }
+
+    public String showHiddenHand() {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < hand.size(); i++) {
+            stringBuilder.append(String.format("(%d)[?] ", i + 1));
+        }
+        return stringBuilder.toString().trim();
     }
 }
