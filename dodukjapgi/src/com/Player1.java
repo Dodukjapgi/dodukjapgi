@@ -11,7 +11,7 @@ public class Player1 extends Player {
     }
 
     @Override
-    public String getTurnMessage() {
-        return "플레이어 1입니다.";
+    public void introduce() {
+        System.out.println("플레이어 1입니다.");
     }
 }

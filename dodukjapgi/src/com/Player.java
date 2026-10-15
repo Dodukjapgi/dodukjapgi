@@ -14,7 +14,7 @@ public abstract class Player {
 
     public abstract String getCharacterName();
 
-    public abstract String getTurnMessage();
+    public abstract void introduce();
 
     public String getName() {
         return name;
