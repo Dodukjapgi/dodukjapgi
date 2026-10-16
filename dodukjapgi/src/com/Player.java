@@ -4,13 +4,17 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Player {
+public abstract class Player {
     private final String name;
     private final List<Card> hand = new ArrayList<>();
 
-    public Player(String name) {
+    protected Player(String name) {
         this.name = name;
     }
+
+    public abstract String getCharacterName();
+
+    public abstract void introduce();
 
     public String getName() {
         return name;
@@ -24,24 +28,37 @@ public class Player {
         return hand.isEmpty();
     }
 
+//    public boolean hasJoker() {
+//        return hand.stream().anyMatch(Card::isJoker);
+//    }
+
+    public Card getCardAt(int index) {
+        checkIndex(index);
+        return hand.get(index);
+    }
+
     public void addCard(Card card) {
         hand.add(card);
     }
 
     public Card removeCardAt(int index) {
-        if (index < 0 || index >= hand.size()) {
-            throw new IllegalArgumentException("잘못된 카드 번호: " + index);
-        }
+        checkIndex(index);
         return hand.remove(index);
     }
 
     public Card drawFrom(Player target, int index) {
-        final Card drawnCard = target.removeCardAt(index);
-        addCard(drawnCard);
-        return drawnCard;
+        Card drawn = target.removeCardAt(index);
+        addCard(drawn);
+        return drawn;
     }
 
     public void shuffleHand() {
         Collections.shuffle(hand);
+    }
+
+    private void checkIndex(int index) {
+        if (index < 0 || index >= hand.size()) {
+            throw new IllegalArgumentException("잘못된 카드 번호: " + index);
+        }
     }
 }
