@@ -27,12 +27,32 @@ public class Game {
 
 
         // TODO: 모든 참가자의 초기 패에서 짝 제거
+        for (Player player : players) {
+            removePairs(player);
+        }
         // TODO: 한 사람씩 자기 패 확인
+        for (Player player : players) {
+            showHand(player);
+        }
         // TODO: 게임이 끝날 때까지 playTurn()과 nextTurn() 반복
+        while (!rules.isGameOver(players)) {
+
+            playTurn();
+
+            // 게임이 종료되지 않았을 때만 다음 턴
+            if (!rules.isGameOver(players)) {
+                nextTurn();
+            }
+        }
         // TODO: 패가 없는 참가자는 차례 건너뛰기
+        if (players[currentPlayerIndex].getHandSize() == 0) {
+            nextTurn();
+        }
         // TODO: 게임 종료 후 패배자 찾기
+        Player loser = rules.findLoser(players);
         // TODO: 결과 출력 후 패배자 반환
-        return null;
+        showResult(loser);
+        return loser;
     }
 
     private void createDeck() {
