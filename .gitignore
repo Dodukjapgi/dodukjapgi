@@ -1,5 +1,8 @@
-/dodukjapgi.iml
+# IntelliJ IDEA
+*.iml
 .idea/
+
+# Build
 dodukjapgi/production/
 out/
 # IntelliJ IDEA

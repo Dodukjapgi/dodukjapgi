@@ -11,7 +11,10 @@ public class MemberDTO {
 
     public MemberDTO(String name, int age) {
         // TODO: 이름과 나이 초기화
+         this.name = name;
+         this.age = age;
         // TODO: 최초 점수는 0으로 설정
+        this.point = 0;
     }
 
     public String getName() {
@@ -40,5 +43,7 @@ public class MemberDTO {
 
     public void addPoint(int point) {
         // TODO: 기존 점수에 전달받은 점수 더하기
+        this.point += point;
     }
 }
+
