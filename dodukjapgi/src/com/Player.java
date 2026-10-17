@@ -28,9 +28,9 @@ public abstract class Player {
         return hand.isEmpty();
     }
 
-//    public boolean hasJoker() {
-//        return hand.stream().anyMatch(Card::isJoker);
-//    }
+    public boolean hasJoker() {
+        return hand.stream().anyMatch(Card::isJoker);
+    }
 
     public Card getCardAt(int index) {
         checkIndex(index);
