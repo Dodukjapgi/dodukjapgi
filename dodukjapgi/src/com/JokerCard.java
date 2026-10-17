@@ -8,7 +8,7 @@ public class JokerCard extends Card {
     @Override
     public boolean isJoker() {
         // TODO: 조커이므로 true 반환
-        return false;
+        return true;
     }
 
     @Override
@@ -20,6 +20,6 @@ public class JokerCard extends Card {
     @Override
     public String toString() {
         // TODO: 조커를 나타내는 문자열 반환
-        return null;
+        return "조커! 마지막까지 들고 있으면 패배!";
     }
 }
