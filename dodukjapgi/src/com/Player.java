@@ -7,6 +7,7 @@ import java.util.List;
 public abstract class Player {
     private final String name;
     private final List<Card> hand = new ArrayList<>();
+    private int point;
 
     protected Player(String name) {
         this.name = name;
@@ -31,8 +32,6 @@ public abstract class Player {
     public boolean hasJoker() {
         return hand.stream().anyMatch(Card::isJoker);
     }
-
-    private int point;
 
     public Card getCardAt(int index) {
         checkIndex(index);
@@ -72,6 +71,7 @@ public abstract class Player {
         this.point += point;
         System.out.println("지급점수 : " + this.point);
     }
+
     public void clearHand() {
         hand.clear();
     }
