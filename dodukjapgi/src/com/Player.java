@@ -47,10 +47,9 @@ public abstract class Player {
         return hand.remove(index);
     }
 
-    public Card drawFrom(Player target, int index) {
+    public void drawFrom(Player target, int index) {
         Card drawn = target.removeCardAt(index);
         addCard(drawn);
-        return drawn;
     }
 
     public void shuffleHand() {
