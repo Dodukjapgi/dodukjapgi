@@ -94,7 +94,7 @@ public class GameMenu {
 
     public Player[] createPlayers() {
 
-        System.out.print("참가 인원수를 입력하세요 :");
+        System.out.print("참가 인원수를 입력하세요: ");
         int playerNum = sc.nextInt();
 
         while (playerNum < 2 || playerNum > 3) {
