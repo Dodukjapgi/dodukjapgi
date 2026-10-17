@@ -31,6 +31,8 @@ public abstract class Player {
 //    public boolean hasJoker() {
 //        return hand.stream().anyMatch(Card::isJoker);
 //    }
+    private int point;
+
 
     public Card getCardAt(int index) {
         checkIndex(index);
@@ -60,5 +62,17 @@ public abstract class Player {
         if (index < 0 || index >= hand.size()) {
             throw new IllegalArgumentException("잘못된 카드 번호: " + index);
         }
+    }
+
+    public int getPoint() {
+        return point;
+    }
+
+    public void addPoint(int point) {
+        this.point += point;
+        System.out.println("지급점수 : " + this.point);
+    }
+    public void clearHand() {
+        hand.clear();
     }
 }

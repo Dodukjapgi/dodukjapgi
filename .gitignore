@@ -2,3 +2,5 @@
 .idea/
 dodukjapgi/production/
 out/
+# IntelliJ IDEA
+*.iml
