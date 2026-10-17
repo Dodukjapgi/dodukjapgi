@@ -104,6 +104,9 @@ public class GameMenu {
             playerNum = sc.nextInt();
         }
 
+        // nextInt() 이후 남은 개행 문자 제거
+        sc.nextLine();
+
         Player[] player = new Player[playerNum];
 
         for (int i = 0; i < player.length; i++) {
@@ -111,7 +114,6 @@ public class GameMenu {
             String name;
 
             if (i == 0) {
-
                 System.out.print("1번 참가자: ");
                 name = sc.nextLine();
                 player[i] = new Player1(name);
@@ -135,6 +137,9 @@ public class GameMenu {
 
     public void startGame() {
 
+        // 메인 메뉴 nextInt() 이후 남은 개행 문자 제거
+        sc.nextLine();
+
         if (players == null) {
             players = createPlayers();
         }
@@ -143,9 +148,6 @@ public class GameMenu {
             for (Player player : players) {
                 player.clearHand();
             }
-
-            // nextInt(), next() 이후 남은 개행 문자 제거
-            sc.nextLine();
 
             Game game = new Game(players, rules, sc);
             Player loser = game.play();
@@ -176,25 +178,19 @@ public class GameMenu {
 
         int num = sc.nextInt();
 
-        if (num == 1) {
-            return true;
+        while (num != 1 && num != 2) {
 
-        } else if (num == 2) {
-            return false;
+            System.out.println("잘못된 번호입니다.");
+            System.out.print(
+                    "다시 입력해 주세요(1. 예 / 2. 아니오) : "
+            );
 
-        } else {
-
-            while (num != 1 && num != 2) {
-
-                System.out.println("잘못된 번호입니다.");
-                System.out.print(
-                        "다시 입력해 주세요(1. 예 / 2. 아니오) : "
-                );
-
-                num = sc.nextInt();
-            }
-
-            return num == 1;
+            num = sc.nextInt();
         }
+
+        // nextInt() 이후 남은 개행 문자 제거
+        sc.nextLine();
+
+        return num == 1;
     }
 }
