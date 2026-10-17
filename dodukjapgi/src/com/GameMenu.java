@@ -6,9 +6,9 @@ import java.util.Scanner;
 
 public class GameMenu {
 
-    private Scanner sc = new Scanner(System.in);
+    private final Scanner sc = new Scanner(System.in);
+    private final GameRules rules = new ThiefGameRules();
     private MemberDTO member;
-    private GameRules rules = new ThiefGameRules();
     private Player[] players;
 
     public void registerMember() {
@@ -16,7 +16,7 @@ public class GameMenu {
         this.member = new MemberDTO();
 
         System.out.print("당신의 이름을 입력하세요: ");
-        String name = sc.next();
+        String name = sc.nextLine();
 
         System.out.print("당신의 나이를 입력하세요: ");
         int age = sc.nextInt();
