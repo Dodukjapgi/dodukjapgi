@@ -113,19 +113,19 @@ public class GameMenu {
             if (i == 0) {
 
                 System.out.print("1번 참가자: ");
-                name = sc.next();
+                name = sc.nextLine();
                 player[i] = new Player1(name);
 
             } else if (i == 1) {
 
                 System.out.print("2번 참가자: ");
-                name = sc.next();
+                name = sc.nextLine();
                 player[i] = new Player2(name);
 
             } else {
 
                 System.out.print("3번 참가자: ");
-                name = sc.next();
+                name = sc.nextLine();
                 player[i] = new Player3(name);
             }
         }
