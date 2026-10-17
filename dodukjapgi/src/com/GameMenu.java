@@ -61,7 +61,7 @@ public class GameMenu {
 
             } else {
 
-                System.out.println("번호를 잘못입력하셨습니다..");
+                System.out.println("번호를 잘못 입력하셨습니다..");
                 System.out.println("메인 메뉴로 돌아갑니다.");
             }
         }
