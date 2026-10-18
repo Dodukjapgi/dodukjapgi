@@ -13,10 +13,6 @@ public abstract class Player {
         this.name = name;
     }
 
-    public abstract String getCharacterName();
-
-    public abstract void introduce();
-
     public String getName() {
         return name;
     }
@@ -28,11 +24,7 @@ public abstract class Player {
     public boolean isEmpty() {
         return hand.isEmpty();
     }
-
-    public boolean hasJoker() {
-        return hand.stream().anyMatch(Card::isJoker);
-    }
-
+    
     public Card getCardAt(int index) {
         checkIndex(index);
         return hand.get(index);

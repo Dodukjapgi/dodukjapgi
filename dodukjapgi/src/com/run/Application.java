@@ -3,13 +3,11 @@ package com.run;
 import com.GameMenu;
 
 public class Application {
-
-    public static void main(String[] args) {
+    static void main() {
         // TODO: GameMenu 객체 생성
         // TODO: 회원가입 메서드 호출
         // TODO: 메인 메뉴 메서드 호출
         GameMenu menu = new GameMenu();
-
         menu.registerMember();
         menu.showMainMenu();
     }

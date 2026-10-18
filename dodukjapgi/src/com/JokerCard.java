@@ -1,7 +1,6 @@
 package com;
 
 public class JokerCard extends Card {
-
     public JokerCard() {
     }
 
